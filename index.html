@@ -198,6 +198,60 @@
             color: #92400e;
         }
         
+        @media print {
+            body {
+                background: white !important;
+                padding: 0 !important;
+            }
+            
+            .container {
+                box-shadow: none !important;
+                background: white !important;
+                backdrop-filter: none !important;
+            }
+            
+            .header {
+                background: #1e40af !important;
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            .summary {
+                background: #1e293b !important;
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            .print-button {
+                display: none !important;
+            }
+            
+            input, select {
+                border: 1px solid #000 !important;
+                background: white !important;
+            }
+        }
+        
+        .print-button {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        .print-button:hover {
+            background: linear-gradient(135deg, #047857, #059669);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(5, 150, 105, 0.3);
+        }
+        
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 1.8rem;
@@ -320,6 +374,8 @@
                 <h3>💰 Monthly Cost Summary</h3>
                 <div id="cost-breakdown"></div>
             </div>
+            
+            <button class="print-button" onclick="window.print()">📄 Save as PDF / Print Quote</button>
             
             <div class="note">
                 <strong>Note:</strong> All pricing is based on a 36-month subscription term. Contact us for custom pricing on shorter terms or additional volume discounts.
